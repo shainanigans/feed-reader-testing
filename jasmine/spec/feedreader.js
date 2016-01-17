@@ -9,8 +9,13 @@ $(function() {
 
         it('have valid URL defined', function() {
             for (var i = 0; i < allFeeds.length; i++) {
+                // Expect there to be a URL
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
+
+                // Expect the URL to be valid
+                // URL regex from http://blog.mattheworiordan.com/post/13174566389/url-regular-expression-for-links-with-or-without
+                expect(allFeeds[i].url).toMatch(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-]*)?\??(?:[\-\+=&;%@\.\w]*)#?(?:[\.\!\/\\\w]*))?)/g);
             }
         });
 
@@ -103,6 +108,15 @@ $(function() {
 
                 done();
             });
+        });
+    });
+
+    // Test for not yet developed link to feed home page
+    describe('Header title', function() {
+        it('links to feed home page', function() {
+            // Expect there to be an anchor tag and elements of a valid url
+            expect($('.header-title').html()).toMatch('<a');
+            expect($('.header-title a').attr('href')).toMatch(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-]*)?\??(?:[\-\+=&;%@\.\w]*)#?(?:[\.\!\/\\\w]*))?)/g);
         });
     });
 }());
