@@ -117,6 +117,7 @@ $(function() {
         it('links to feed home page', function() {
             // Expect there to be an anchor tag and elements of a valid url
             expect($('.header-title').html()).toMatch('<a');
+            expect($('.header-title a').attr('href').length).not.toBe(0);
             expect($('.header-title a').attr('href')).toMatch(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-]*)?\??(?:[\-\+=&;%@\.\w]*)#?(?:[\.\!\/\\\w]*))?)/g);
         });
     });
