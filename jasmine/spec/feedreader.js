@@ -73,6 +73,11 @@ $(function() {
             done();
         });
 
+        // Reset the setup after running each spec to default feed
+        afterEach(function() {
+            loadFeed(0);
+        });
+
         it('has changed the content', function(done) {
             // Load a different feed and store its data
             loadFeed(1, function() {
@@ -96,6 +101,11 @@ $(function() {
             // Store the first feed's data
             entryCount = $('.entry').length;
             done();
+        });
+
+        // Reset the setup after running each spec to default entry count
+        afterEach(function() {
+            loadFeed(0);
         });
 
         it('has loaded more entries', function(done) {
