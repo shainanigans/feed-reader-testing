@@ -49,7 +49,6 @@ $(function() {
     describe('Initial Entries', function() {
 
         beforeEach(function(done) {
-            // Give the async scripts time to load with setTimeout
             loadFeed(0, function() {
                 done();
             });
@@ -57,6 +56,7 @@ $(function() {
 
         it('have at least one entry', function(done) {
             expect(document.getElementsByClassName('entry').length).not.toBe(0);
+            done();
         });
     });
 
