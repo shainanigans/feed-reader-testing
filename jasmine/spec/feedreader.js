@@ -65,11 +65,11 @@ $(function() {
 
         beforeEach(function(done) {
             // Refresh the data
-            loadFeed(0);
-
-            // Store the first feed's data
-            firstFeed = $('.feed').html();
-            done();
+            loadFeed(0, function() {
+                // Store the first feed's data
+                firstFeed = $('.feed').html();
+                done();
+            });
         });
 
         // Reset the setup after running each spec to default feed
