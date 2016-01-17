@@ -50,14 +50,13 @@ $(function() {
 
         beforeEach(function(done) {
             // Give the async scripts time to load with setTimeout
-            setTimeout(function() {
+            loadFeed(0, function() {
                 done();
-            }, 3000);
+            });
         });
 
         it('have at least one entry', function(done) {
             expect(document.getElementsByClassName('entry').length).not.toBe(0);
-            done();
         });
     });
 
