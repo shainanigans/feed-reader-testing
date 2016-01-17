@@ -54,9 +54,8 @@ $(function() {
             });
         });
 
-        it('have at least one entry', function(done) {
+        it('have at least one entry', function() {
             expect(document.getElementsByClassName('entry').length).not.toBe(0);
-            done();
         });
     });
 
