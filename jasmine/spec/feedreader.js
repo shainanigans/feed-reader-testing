@@ -100,6 +100,9 @@ $(function() {
             newEntryCount;
 
         beforeEach(function(done) {
+            // Reset the data
+            loadFeed(0);
+
             // Store the first feed's data
             entryCount = $('.entry').length;
             done();
