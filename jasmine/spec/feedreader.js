@@ -67,6 +67,9 @@ $(function() {
             secondFeed;
 
         beforeEach(function(done) {
+            // Refresh the data
+            loadFeed(0);
+            
             // Store the first feed's data
             firstFeed = $('.feed').html();
             done();
