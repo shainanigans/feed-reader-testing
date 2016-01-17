@@ -69,14 +69,14 @@ $(function() {
         beforeEach(function(done) {
             // Refresh the data
             loadFeed(0);
-            
+
             // Store the first feed's data
             firstFeed = $('.feed').html();
             done();
         });
 
         // Reset the setup after running each spec to default feed
-        afterEach(function() {
+        afterAll(function() {
             loadFeed(0);
         });
 
@@ -106,7 +106,7 @@ $(function() {
         });
 
         // Reset the setup after running each spec to default entry count
-        afterEach(function() {
+        afterAll(function() {
             loadFeed(0);
         });
 
