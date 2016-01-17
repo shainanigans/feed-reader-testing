@@ -113,7 +113,7 @@ $(function() {
             loadFeed(0);
         });
 
-        it('has loaded more entries', function(done) {
+        xit('has loaded more entries', function(done) {
             // Load a different feed and store its data
             loadMore(function() {
                 newEntryCount =  $('.entry').length;
@@ -129,7 +129,7 @@ $(function() {
     // Test for not yet developed link to feed home page
     describe('Header title', function() {
 
-        it('links to feed home page', function() {
+        xit('links to feed home page', function() {
             // Expect there to be an anchor tag and elements of a valid url
             expect($('.header-title').html()).toMatch('<a');
             expect($('.header-title a').attr('href').length).not.toBe(0);
