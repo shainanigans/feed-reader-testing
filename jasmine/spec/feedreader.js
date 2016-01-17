@@ -1,4 +1,5 @@
 $(function() {
+    // Test existing features of RSS Feeds
     describe('RSS Feeds', function() {
 
         it('are defined', function() {
@@ -21,6 +22,7 @@ $(function() {
         });
     });
 
+    // Test existing features of the menu
     describe('The menu', function() {
 
         it('is hidden by default', function() {
@@ -38,6 +40,7 @@ $(function() {
         });
     });
 
+    // Test existing features of the initial entries
     describe('Initial Entries', function() {
 
         beforeEach(function(done) {
@@ -53,8 +56,9 @@ $(function() {
         });
     });
 
+    // Test existing features of the new feed selection
     describe('New Feed Selection', function() {
-        
+
         var firstFeed,
             secondFeed;
 
@@ -71,6 +75,31 @@ $(function() {
 
                 // Compare the two htmls
                 expect(firstFeed).not.toEqual(secondFeed);
+
+                done();
+            });
+        });
+    });
+
+    // Test for not yet developed "load more" functionality
+    describe('Load more button', function() {
+
+        var entryCount,
+            newEntryCount;
+
+        beforeEach(function(done) {
+            // Store the first feed's data
+            entryCount = $('.entry').length;
+            done();
+        });
+
+        it('has loaded more entries', function(done) {
+            // Load a different feed and store its data
+            loadMore(function() {
+                newEntryCount =  $('.entry').length;
+
+                // Compare the first entry count with the second
+                expect(entryCount).toBeLessThan(newEntryCount);
 
                 done();
             });

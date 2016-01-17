@@ -13,7 +13,8 @@ The following tests test existing features:
 * Initial Entries: have at least one entry
 * New Feed Selection: has changed the content
 
-The following tests test future features that have not been developed (test-driven development):
+The following tests test future features that have not yet been developed (test-driven development):
+* Load more button: has loaded more entries
 
 ##About
 This project is part of Udacity's Front-End Web Developer Nanodegree. It focuses on testing using the Jasmine testing framework.
