@@ -98,11 +98,11 @@ $(function() {
 
         beforeEach(function(done) {
             // Reset the data
-            loadFeed(0);
-
-            // Store the first feed's data
-            entryCount = $('.entry').length;
-            done();
+            loadFeed(0, function() {
+                // Store the first feed's data
+                entryCount = $('.entry').length;
+                done();
+            });
         });
 
         // Reset the setup after running each spec to default entry count
